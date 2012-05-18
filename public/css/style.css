@@ -1,0 +1,57 @@
+/*Menu open*/
+.mo-left{ float:left; width:29%;}
+.mo-left p{margin-bottom:10px;}
+.mo-left .coresystem-form-button,.mo-right .coresystem-form-button{margin-top:0;}
+
+.mo-left table,.mo-right table{ width:100%;color:#666; font-size:13px;border:0px solid #e4e4e4;  margin:0 0 10px;}
+.mo-left th,.mo-right th{ font-weight:normal; color:#666;height:auto;padding:0; background:none;}
+.mo-left tr:hover,.mo-right tr:hover{ background:none}
+.mo-left td,.mo-right td{ height:normal; vertical-align: middle; padding:0;}
+.mo-left th{ width:80px;}
+
+.mo-history{ background:#dfdfdf;padding:10px;border-top:1px solid #ccc;}
+.mo-history li{ line-height:150%; padding-left:15px; background:url(../images/history.gif) no-repeat 3px center;}
+.mo-history a{color:#666}
+.mo-history p{ padding-top:5px; margin-top:5px; margin-bottom:5px; border-top:1px dotted #aaa;}
+
+.mo-middle{ float:left; width:33%;margin:0 1%; border-left:1px solid #ddd;}
+.mo-middile-ul{padding-left:10px; margin-left:10px; }
+
+.mo-middile-ul li{ position:relative}
+.mo-middile-ul li p{margin-bottom:5px;}
+.mo-middile-ul li p:hover{ background:#d3f7ff;}
+.mo-middile-ul span{margin-right:10px;display:inline-block; min-width:100px; text-align:left;}
+.mo-middile-ul em{ position:absolute; right:0; top:0;}
+.mo-middile-ul a{ font-size:12px; color:#aaa; display:block;width:16px; height:16px;margin-left:5px; float:right; background:url(../images/mo-icon.gif) no-repeat}
+.mo-middile-ul a:hover{ color:#09c;border-radius:3px;background:url(../images/mo-icon.gif) no-repeat}
+.mo-middile-ul a img{margin-right:3px; margin-top:-2px;}
+
+
+.mo-middile-ul li span{ font-size:18px; color:#09c;}
+.mo-middile-ul ul li span{font-size:16px;}
+.mo-middile-ul ul ul li span{ font-size:14px;}
+.mo-middile-ul ul ul ul li span{font-size:12px;}
+
+.mo-middile-ul ul {border-left:1px solid #09c;margin-bottom:15px;}
+.mo-middile-ul ul ul{border-left:0px solid #eee; margin-bottom:0;} 
+
+a.mo-new{ background-position:0 -122px}
+a:hover.mo-new{ background-position:0 -22px}
+a.mo-del{ background-position:0 -102px;}
+a:hover.mo-del{ background-position:0 -2px}
+a.mo-edit{ background-position:0 -142px}
+a:hover.mo-edit{ background-position:0 -42px}
+a.mo-up{ background-position:0 -162px}
+a:hover.mo-up{ background-position:0 -62px}
+a.mo-down{ background-position:0 -182px}
+a:hover.mo-down{ background-position:0 -82px;}
+
+
+a.mo-clear{ display:block; text-align:center;width: 85px;height: 28px; line-height: 28px;overflow: hidden;background: url(../images/form-btn.jpg) no-repeat scroll 0 0;color:#666;font-size: 14px;margin:10px;}
+a:hover.mo-clear{ background-position:-85px 0; text-decoration:none; color:#fff;}
+
+.mo-right{ float: left; width:34%;border-left:1px solid #ddd}
+.mo-right p{margin-bottom:10px;}
+.mo-right-item{padding:0 0 10px 10px;}
+.mo-right .intro td{padding-bottom:5px; line-height:20px; color:#333;text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);}
+.mo-right .intro th{vertical-align:top}
