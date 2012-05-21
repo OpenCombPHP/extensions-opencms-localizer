@@ -22,7 +22,7 @@ use org\opencomb\localizer\LangSwich;
 class OpencmsLocalizer extends Extension 
 {
 	public function load()
-	{
+	{	
 		BeanFactory::singleton()->registerBeanClass("org\\opencomb\\localizer\\LangSelect",'langselect') ;
 		Menu::registerBuildHandle(
 				'org\\opencomb\\coresystem\\mvc\\controller\\ControlPanelFrame'
@@ -66,7 +66,6 @@ class OpencmsLocalizer extends Extension
 			NameMapper::singleton()->mapTableName($sPrefix.'opencms_article',$sPrefix.'opencms_article'.'_'.str_replace('-', '_', $aLocale->localeName()));
 		}else{
 			NameMapper::singleton()->mapTableName($sPrefix.'opencms_article',$sPrefix.'opencms_article'.'_'.str_replace('-', '_', $aLocale->localeName()));
-			
 		}
 		
 		//附件表
@@ -79,8 +78,7 @@ class OpencmsLocalizer extends Extension
 			DB::singleton()->execute($sSQLCreate);
 			NameMapper::singleton()->mapTableName($sPrefix.'opencms_attachment',$sPrefix.'opencms_attachment'.'_'.str_replace('-', '_', $aLocale->localeName()));
 		}else{
-			NameMapper::singleton()->mapTableName($sPrefix.'opencms_attachment',$sPrefix.'opencms_attachment'.'_'.str_replace('-', '_', $aLocale->localeName()));
-					
+			NameMapper::singleton()->mapTableName($sPrefix.'opencms_attachment',$sPrefix.'opencms_attachment'.'_'.str_replace('-', '_', $aLocale->localeName()));		
 		}
 		
 		//分类表
@@ -94,11 +92,8 @@ class OpencmsLocalizer extends Extension
 			NameMapper::singleton()->mapTableName($sPrefix.'opencms_category',$sPrefix.'opencms_category'.'_'.str_replace('-', '_', $aLocale->localeName()));
 		}else{
 			NameMapper::singleton()->mapTableName($sPrefix.'opencms_category',$sPrefix.'opencms_category'.'_'.str_replace('-', '_', $aLocale->localeName()));
-					
 		}
 		/*
-		var_dump($arrCreateCommand);
-		exit;
 		try{
 			
 			$sSQL = 'select * from'.' '.$sPrefix.'opencms_article'.'_'.str_replace('-', '_', $aLocale->localeName());
@@ -143,11 +138,17 @@ class OpencmsLocalizer extends Extension
 		
 	}
 	
-
+	public function initRegisterEvent(EventManager $aEventMgr)
+	{
+		$aEventMgr->registerEventHandle(
+				'org\\opencomb\\localizer\\LangSwich'
+				, LangSwich::beforeRespond
+				, array(__CLASS__,'onBeforeRespond')
+		);
+	}
 	
 	static public function onBeforeRespond($sLangCountryNew,$sLangCountryOld,$sPageUrl)
 	{
-		echo $sPageUrl;exit;
 		$arrLangCountry = explode('_',$sLangCountryNew);
 		$sDpath = $sLangCountryNew;
 		$arrLang =OpencmsLocalizer::langIterator();
