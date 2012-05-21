@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Extension>
 
-	<name>opencms_localizer</name>
+	<name>opencms-localizer</name>
 	<version>0.1</version>
 	<title>本地化</title>
 	
