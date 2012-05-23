@@ -62,88 +62,6 @@ class OpencmsLocalizer extends Extension
 		NameMapper::singleton()->mapTableName($sPrefix.'opencms_attachment',$sPrefix.'opencms_attachment'.'_'.str_replace('-', '_', $aLocale->localeName()));
 		NameMapper::singleton()->mapTableName($sPrefix.'opencms_category',$sPrefix.'opencms_category'.'_'.str_replace('-', '_', $aLocale->localeName()));
 		
-		//文章表
-// 		if(!count($aRecordsArticle->fetchAll()))
-// 		{
-// 			$sSQL = "show create table" . ' ' . $sPrefix . "opencms_article";
-// 			$aRecords = DB::singleton()->query($sSQL);
-// 			$arrCreateCommand = $aRecords->fetchAll();
-// 			$sSQLCreate = str_replace($sPrefix.'opencms_article', $sPrefix.'opencms_article'.'_'.str_replace('-', '_', $aLocale->localeName()), $arrCreateCommand[0]['Create Table']);
-// 			DB::singleton()->execute($sSQLCreate);
-// 			NameMapper::singleton()->mapTableName($sPrefix.'opencms_article',$sPrefix.'opencms_article'.'_'.str_replace('-', '_', $aLocale->localeName()));
-// 		}else{
-// 			NameMapper::singleton()->mapTableName($sPrefix.'opencms_article',$sPrefix.'opencms_article'.'_'.str_replace('-', '_', $aLocale->localeName()));
-// 		}
-		
-// 		//附件表
-// 		if(!count($aRecordsAttachment->fetchAll()))
-// 		{
-// 			$sSQL = "show create table" . ' ' . $sPrefix . "opencms_attachment";
-// 			$aRecords = DB::singleton()->query($sSQL);
-// 			$arrCreateCommand = $aRecords->fetchAll();
-// 			$sSQLCreate = str_replace($sPrefix.'opencms_attachment', $sPrefix.'opencms_attachment'.'_'.str_replace('-', '_', $aLocale->localeName()), $arrCreateCommand[0]['Create Table']);
-// 			DB::singleton()->execute($sSQLCreate);
-// 			NameMapper::singleton()->mapTableName($sPrefix.'opencms_attachment',$sPrefix.'opencms_attachment'.'_'.str_replace('-', '_', $aLocale->localeName()));
-// 		}else{
-// 			NameMapper::singleton()->mapTableName($sPrefix.'opencms_attachment',$sPrefix.'opencms_attachment'.'_'.str_replace('-', '_', $aLocale->localeName()));		
-// 		}
-		
-// 		//分类表
-// 		if(!count( $aRecordsCategory->fetchAll()))
-// 		{
-// 			$sSQL = "show create table" . ' ' . $sPrefix . "opencms_category";
-// 			$aRecords = DB::singleton()->query($sSQL);
-// 			$arrCreateCommand = $aRecords->fetchAll();
-// 			$sSQLCreate = str_replace($sPrefix.'opencms_category', $sPrefix.'opencms_category'.'_'.str_replace('-', '_', $aLocale->localeName()), $arrCreateCommand[0]['Create Table']);
-// 			DB::singleton()->execute($sSQLCreate);
-// 			NameMapper::singleton()->mapTableName($sPrefix.'opencms_category',$sPrefix.'opencms_category'.'_'.str_replace('-', '_', $aLocale->localeName()));
-// 		}else{
-// 			NameMapper::singleton()->mapTableName($sPrefix.'opencms_category',$sPrefix.'opencms_category'.'_'.str_replace('-', '_', $aLocale->localeName()));
-// 		}
-		/*
-		try{
-			
-			$sSQL = 'select * from'.' '.$sPrefix.'opencms_article'.'_'.str_replace('-', '_', $aLocale->localeName());
-			$aRecords = DB::singleton()->query($sSQL);
-			NameMapper::singleton()->mapTableName($sPrefix.'opencms_article',$sPrefix.'opencms_article'.'_'.str_replace('-', '_', $aLocale->localeName()));
-		}catch(Exception $e){
-			$sSQL = "show create table" . $sPrefix				, array(__CLASS__,'selectDefault')
- . "opencms_article";
-			$aRecords = DB::singleton()->query($sSQL);
-			$arrCreateCommand = $aRecords->fetchAll();
-			$sSQLCreate = str_replace($sPrefix.'opencms_article', $sPrefix.'opencms_article'.'_'.str_replace('-', '_', $aLocale->localeName()), $arrCreateCommand[0]['Create Table']);
-			DB::singleton()->execute($sSQLCreate);
-			NameMapper::singleton()->mapTableName($sPrefix.'opencms_article',$sPrefix.'opencms_article'.'_'.str_replace('-', '_', $aLocale->localeName()));
-		}
-	
-		try{
-			$sSQL = 'select * from'.' '.$sPrefix.'opencms_attachment'.'_'.str_replace('-', '_', $aLocale->localeName());
-			$aRecords = DB::singleton()->query($sSQL);
-			NameMapper::singleton()->mapTableName($sPrefix.'opencms_attachment',$sPrefix.'opencms_attachment'.'_'.str_replace('-', '_', $aLocale->localeName()));
-		}catch(Exception $e){
-			$sSQL = "show create table opencms_attachment";
-			$aRecords = DB::singleton()->query($sSQL);
-			$arrCreateCommand = $aRecords->fetchAll();
-			$sSQLCreate = str_replace($sPrefix.'opencms_attachment', $sPrefix.'opencms_attachment'.'_'.str_replace('-', '_', $aLocale->localeName()), $arrCreateCommand[0]['Create Table']);
-			DB::singleton()->execute($sSQLCreate);
-			NameMapper::singleton()->mapTableName($sPrefix.'opencms_attachment',$sPrefix.'opencms_attachment'.'_'.str_replace('-', '_', $aLocale->localeName()));
-		}
-		try{
-		
-			$sSQL = 'select * from'.' '.$sPrefix.'opencms_category'.'_'.str_replace('-', '_', $aLocale->localeName());
-		
-			$aRecords = DB::singleton()->query($sSQL);
-			NameMapper::singleton()->mapTableName($sPrefix.'opencms_category',$sPrefix.'opencms_category'.'_'.str_replace('-', '_', $aLocale->localeName()));
-		}catch(Exception $e){
-			$sSQL = "show create table opencms_category";
-			$aRecords = DB::singleton()->query($sSQL);
-			$arrCreateCommand = $aRecords->fetchAll();
-			$sSQLCreate = str_replace($sPrefix.'opencms_category', $sPrefix.'opencms_category'.'_'.str_replace('-', '_', $aLocale->localeName()), $arrCreateCommand[0]['Create Table']);
-			DB::singleton()->execute($sSQLCreate);
-			NameMapper::singleton()->mapTableName($sPrefix.'opencms_category',$sPrefix.'opencms_category'.'_'.str_replace('-', '_', $aLocale->localeName()));
-		}
-		*/
-		
 	}
 	
 	//注册
@@ -152,7 +70,7 @@ class OpencmsLocalizer extends Extension
 		$aEventMgr->registerEventHandle(
 				'org\\opencomb\\localizer\\LangSwich'
 				, LangSwich::swichLang
-				, array(__CLASS__,'swichLang')
+				, array(__CLASS__,'swichLangdd')
 		)
 			->registerEventHandle(
 				'org\\opencomb\\localizer\\LangSelectDefault'
@@ -162,7 +80,7 @@ class OpencmsLocalizer extends Extension
 	}
 	
 	//切换语言
-	static public function swichLang($sLangCountryNew,$sLangCountryOld,$sPageUrl)
+	static public function swichLangdd($sLangCountryNew,$sLangCountryOld,$sPageUrl)
 	{
 		OpencmsLocalizer::createTable($sLangCountryNew);
 	}
@@ -194,6 +112,10 @@ class OpencmsLocalizer extends Extension
 		$aRecordsAttachment = DB::singleton()->query($sSQLAttachment);
 		$aRecordsCategory = DB::singleton()->query($sSQLCategory);
 		
+		$sSQLT = "show create table" . ' ' . $sPrefix . "opencms_article";
+		$aRecords = DB::singleton()->query($sSQLT);
+		$arrCreateCommandT = $aRecords->fetchAll();
+		
 		//文章表
 		if(!count($aRecordsArticle->fetchAll()))
 		{
@@ -201,8 +123,6 @@ class OpencmsLocalizer extends Extension
 			$aRecords = DB::singleton()->query($sSQL);
 			$arrCreateCommand = $aRecords->fetchAll();
 			$sSQLCreate = str_replace($arrCreateCommand[0]['Table'], $sPrefix.'opencms_article'.'_'.$sLangCountryNew, $arrCreateCommand[0]['Create Table']);
-			//$sSQLCreate = str_replace($sPrefix.'opencms_article', $sPrefix.'opencms_article'.'_'.$sLangCountryNew, $arrCreateCommand[0]['Create Table']);
-			var_dump($sSQLCreate);
 			DB::singleton()->execute($sSQLCreate);
 		}
 		
@@ -213,7 +133,6 @@ class OpencmsLocalizer extends Extension
 			$aRecords = DB::singleton()->query($sSQL);
 			$arrCreateCommand = $aRecords->fetchAll();
 			$sSQLCreate = str_replace($arrCreateCommand[0]['Table'], $sPrefix.'opencms_attachment'.'_'.$sLangCountryNew, $arrCreateCommand[0]['Create Table']);
-			//$sSQLCreate = str_replace($sPrefix.'opencms_attachment', $sPrefix.'opencms_attachment'.'_'.$sLangCountryNew, $arrCreateCommand[0]['Create Table']);
 			DB::singleton()->execute($sSQLCreate);
 		}
 		
@@ -224,7 +143,6 @@ class OpencmsLocalizer extends Extension
 			$aRecords = DB::singleton()->query($sSQL);
 			$arrCreateCommand = $aRecords->fetchAll();
 			$sSQLCreate = str_replace($arrCreateCommand[0]['Table'], $sPrefix.'opencms_category'.'_'.$sLangCountryNew, $arrCreateCommand[0]['Create Table']);
-			//$sSQLCreate = str_replace($sPrefix.'opencms_category', $sPrefix.'opencms_category'.'_'.$sLangCountryNew, $arrCreateCommand[0]['Create Table']);
 			DB::singleton()->execute($sSQLCreate);
 		}
 	}
