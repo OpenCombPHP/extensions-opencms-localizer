@@ -25,12 +25,13 @@ class OpencmsLocalizer extends Extension
 	public function load()
 	{	
 		BeanFactory::singleton()->registerBeanClass("org\\opencomb\\localizer\\LangSelect",'langselect') ;
-		Menu::registerBuildHandle(
-				'org\\opencomb\\coresystem\\mvc\\controller\\ControlPanelFrame'
-				, 'frameView'
-				, 'mainMenu'
-				, array(__CLASS__,'buildControlPanelMenu')
-		) ;
+		ControlPanel::registerMenuHandler( array(__CLASS__,'buildControlPanelMenu') ) ;
+// 		Menu::registerBuildHandle(
+// 				'org\\opencomb\\coresystem\\mvc\\controller\\ControlPanelFrame'
+// 				, 'frameView'
+// 				, 'mainMenu'
+// 				, array(__CLASS__,'buildControlPanelMenu')
+// 		) ;
 		OpencmsLocalizer::createTable(null);
 		// 注册语言包目录
 	}
