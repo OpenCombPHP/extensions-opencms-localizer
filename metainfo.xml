@@ -2,7 +2,7 @@
 <Extension>
 
 	<name>opencms-localizer</name>
-	<version>0.1</version>
+	<version>0.2</version>
 	<title>本地化</title>
 	
 
@@ -12,5 +12,7 @@
 	<template folder="/template" />
 	
 	<publicFolder folder="/public" />
+	
+	<require type="extension" item="coresystem"><![CDATA[ >=0.2 ]]></require>
 	
 </Extension>
