@@ -35,7 +35,6 @@ class OpencmsLocalizer extends Extension
 		// 合并配置数组，增加菜单
 		$arrConfig['item']['system']['item']['platform-manage']['item']['opencmslocalizer'] = array(
 				'title'=> 'CMS管理本地化' ,
-				'controller' => 'org.opencomb.opencmslocalizer.OpencmsLocalizer' ,
 		);
 	}
 
