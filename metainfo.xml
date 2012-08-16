@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Extension>
-
 	<name>opencms-localizer</name>
 	<version>0.2</version>
 	<title>本地化</title>
-	
-
 	<class>org.opencomb.opencmslocalizer.OpencmsLocalizer</class>
 	<package folder="/class" namespace="org.opencomb.opencmslocalizer" />
-	
-	<require type="extension" item="coresystem"><![CDATA[ >=0.2 ]]></require>
-	
+	<require type="extension" item="coresystem"><![CDATA[ =0.2 ]]></require>
+	<require type="extension" item="opencms"><![CDATA[ =0.2 ]]></require>
+	<require type="extension" item="localizer"><![CDATA[ =0.2 ]]></require>
 </Extension>
