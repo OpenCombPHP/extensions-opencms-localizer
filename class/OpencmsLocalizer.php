@@ -19,6 +19,7 @@ use org\jecat\framework\lang\Exception;
 use org\jecat\framework\util\EventManager;
 use org\opencomb\localizer\LangSwich;
 use org\opencomb\localizer\LangSelectDefault;
+use org\opencomb\coresystem\mvc\controller\ControlPanel ;
 
 class OpencmsLocalizer extends Extension 
 {
