@@ -8,10 +8,6 @@
 
 	<class>org.opencomb.opencmslocalizer.OpencmsLocalizer</class>
 	<package folder="/class" namespace="org.opencomb.opencmslocalizer" />
-
-	<template folder="/template" />
-	
-	<publicFolder folder="/public" />
 	
 	<require type="extension" item="coresystem"><![CDATA[ >=0.2 ]]></require>
 	
