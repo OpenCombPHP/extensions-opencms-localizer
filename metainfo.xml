@@ -5,7 +5,11 @@
 	<title>本地化</title>
 	<class>org.opencomb.opencmslocalizer.OpencmsLocalizer</class>
 	<package folder="/class" namespace="org.opencomb.opencmslocalizer" />
+<<<<<<< HEAD
 	<require type="extension" item="coresystem"><![CDATA[ =0.2 ]]></require>
 	<require type="extension" item="opencms"><![CDATA[ =0.2 ]]></require>
 	<require type="extension" item="localizer"><![CDATA[ =0.2 ]]></require>
+=======
+	
+>>>>>>> 2e087efccd725f69ce7f8f4a1f8261953f93d2ef
 </Extension>
